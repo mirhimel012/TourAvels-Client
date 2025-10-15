@@ -1,3 +1,3 @@
 Website Name: Journey Master
 <br>
-Live Site URL: https://journeymaster.netlify.app/
+Live Site URL: https://journeymaster.vercel.app/
