@@ -36,7 +36,9 @@ const About = () => {
 
           <div className="">
             <Reveal className="about-section" direction="fade-left">
-              <h3 className="text-xl text-blue-500 font-semibold mb-2">Our Mission</h3>
+              <h3 className="text-xl text-blue-500 font-semibold mb-2">
+                Our Mission
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed mx-auto max-w-2xl">
                 Established in [year], Southeast Asia Travel is dedicated to
                 providing travelers with unforgettable experiences and
@@ -46,7 +48,9 @@ const About = () => {
               </p>
             </Reveal>
             <Reveal className="about-section" direction="zoom-in" delay={400}>
-              <h3 className="text-xl text-blue-500 font-semibold mb-2">Our Expertise</h3>
+              <h3 className="text-xl text-blue-500 font-semibold mb-2">
+                Our Expertise
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed mx-auto max-w-2xl">
                 With years of experience and a passion for travel, our team of
                 experts has curated the finest selection of destinations and

@@ -20,17 +20,17 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://journey-master-server.vercel.app/touristsSpot')
+                loader: () => fetch('https://tour-avels-server.vercel.app/touristsSpot')
             },
             {
                 path: '/allTouristsSpot',
                 element: <AllTouristsSpot></AllTouristsSpot>,
-                loader: () => fetch('https://journey-master-server.vercel.app/touristsSpot')
+                loader: () => fetch('https://tour-avels-server.vercel.app/touristsSpot')
             },
             {
                 path: '/details/:id',
                 element: <Details></Details>,
-                loader: ({params}) => fetch(`https://journey-master-server.vercel.app/touristsSpot/${params.id}`)
+                loader: ({params}) => fetch(`https://tour-avels-server.vercel.app/touristsSpot/${params.id}`)
             },
             {
                 path: '/addTouristsSpot',
@@ -39,12 +39,12 @@ const router = createBrowserRouter([
             {
                 path: '/myList',
                 element: <PrivateMyList><MyList></MyList></PrivateMyList>,
-                loader: () => fetch('https://journey-master-server.vercel.app/touristsSpot')
+                loader: () => fetch('https://tour-avels-server.vercel.app/touristsSpot')
             },
             {
                 path: 'mylist/updatespot/:id',
                 element: <UpdateSpot></UpdateSpot>,
-                loader: ({params}) => fetch(`https://journey-master-server.vercel.app/touristsSpot/${params.id}`)
+                loader: ({params}) => fetch(`https://tour-avels-server.vercel.app/touristsSpot/${params.id}`)
             },
             {
                 path: '/register',
