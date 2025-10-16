@@ -47,7 +47,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <img
             className="w-12 h-12 rounded-full border-2 border-green-500"
-            src="./public/main_logo.png"
+            src="/main_logo.png"
             alt="Logo"
           />
           <span className="font-bold text-xl text-gray-800">TourAvels</span>

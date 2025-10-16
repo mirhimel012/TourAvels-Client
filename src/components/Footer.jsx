@@ -7,20 +7,20 @@ const Footer = () => {
         
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <img src="./public/favLogo3.png" alt="Logo" className="w-14 h-12" />
+          <img src="/favLogo3.png" alt="Logo" className="w-14 h-12" />
           <span className="text-2xl font-bold">TourAvels</span>
         </div>
 
         {/* Social Media */}
         <div className="flex space-x-6 mt-2">
           <a href="#" title="Facebook">
-            <img src="./public/fb.png" alt="Facebook" className="w-6 h-6" />
+            <img src="/fb.png" alt="Facebook" className="w-6 h-6" />
           </a>
           <a href="#" title="Twitter">
-            <img src="./public/xx.png" alt="Twitter" className="w-6 h-6" />
+            <img src="/xx.png" alt="Twitter" className="w-6 h-6" />
           </a>
           <a href="#" title="Instagram">
-            <img src="./public/inst.png" alt="Instagram" className="w-6 h-6" />
+            <img src="/inst.png" alt="Instagram" className="w-6 h-6" />
           </a>
         </div>
 
