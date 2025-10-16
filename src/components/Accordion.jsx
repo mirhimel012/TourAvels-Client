@@ -1,86 +1,86 @@
 import "animate.css";
+
 const Accordion = () => {
   return (
-    <div>
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" defaultChecked />
-        <div className="collapse-title text-xl font-medium">
-          What makes the Sundarbans in Bangladesh unique?
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+      
+      {/* Heading */}
+      <h2 className="animate__animated animate__fadeInDown text-center mb-12 text-purple-800 font-extrabold text-4xl lg:text-6xl drop-shadow-md">
+        Frequently Asked Questions
+      </h2>
+
+      <div className="w-full space-y-4">
+        {/* Sundarbans */}
+        <div className="collapse collapse-plus bg-white shadow-lg rounded-2xl border border-purple-200">
+          <input type="radio" name="faq-accordion" defaultChecked />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-purple-700 flex justify-between">
+            🌳 What makes the Sundarbans unique?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed">
+            <p>
+              The Sundarbans is the world’s largest mangrove forest, home to the
+              Royal Bengal Tiger and countless wildlife. It is also a UNESCO
+              World Heritage Site.
+            </p>
+          </div>
         </div>
-        <div className="collapse-content">
-          <p>
-            The Sundarbans is the largest mangrove forest in the world, known
-            for its rich biodiversity including the famous Royal Bengal Tigers.
-            It's also a UNESCO World Heritage Site.
-          </p>
+
+        {/* Cox's Bazar */}
+        <div className="collapse collapse-plus bg-white shadow-lg rounded-2xl border border-purple-200">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-purple-700">
+            🏖 Why is Cox’s Bazar famous?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed">
+            <p>
+              Cox’s Bazar is home to the longest natural sea beach in the world,
+              stretching over 120 km. It’s the most popular tourist spot in
+              Bangladesh.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          What's the significance of Borobudur Temple in Indonesia?
+
+        {/* Sylhet */}
+        <div className="collapse collapse-plus bg-white shadow-lg rounded-2xl border border-purple-200">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-purple-700">
+            🌿 Why visit Sylhet?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed">
+            <p>
+              Sylhet is famous for its tea gardens, Ratargul Swamp Forest, and
+              Jaflong. With green hills and waterfalls, it’s a natural paradise.
+            </p>
+          </div>
         </div>
-        <div className="collapse-content">
-          <p>
-            Borobudur is the largest Buddhist temple in the world and is
-            renowned for its intricate design and historical importance. It's a
-            UNESCO World Heritage Site attracting pilgrims and tourists alike.
-          </p>
+
+        {/* Saint Martin's */}
+        <div className="collapse collapse-plus bg-white shadow-lg rounded-2xl border border-purple-200">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-purple-700">
+            🏝 What’s special about Saint Martin’s Island?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed">
+            <p>
+              Known as the “Coral Island” of Bangladesh, Saint Martin’s offers
+              crystal-clear waters, coral reefs, and stunning beaches.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          Why is Langkawi in Malaysia a popular destination?
-        </div>
-        <div className="collapse-content">
-          <p>
-            Langkawi is famous for its stunning beaches, clear waters, and lush
-            landscapes. It's also a duty-free island, making it attractive for
-            shopping, relaxation, and water sports.
-          </p>
-        </div>
-      </div>
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          What makes Ha Long Bay in Vietnam a must-visit destination?
-        </div>
-        <div className="collapse-content">
-          <p>
-            Ha Long Bay is known for its emerald waters and thousands of
-            towering limestone islands topped with rainforests. It's a UNESCO
-            World Heritage Site and one of the New Seven Natural Wonders of the
-            World.
-          </p>
-        </div>
-      </div>
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          What sets Bangkok apart from other cities in Thailand?
-        </div>
-        <div className="collapse-content">
-          <p>
-            Bangkok is Thailand's vibrant capital known for its ornate shrines,
-            bustling street markets, and vibrant nightlife. It seamlessly blends
-            modernity with tradition, offering visitors a diverse range of
-            experiences.
-          </p>
-        </div>
-      </div>
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          What makes Angkor Wat in Cambodia a marvel of architecture?
-        </div>
-        <div className="collapse-content">
-          <p>
-            Angkor Wat is the largest religious monument in the world and a
-            symbol of Cambodia's rich history and culture. Its intricate design,
-            elaborate bas-reliefs, and grandeur make it a must-visit for history
-            and architecture enthusiasts.
-          </p>
+
+        {/* Bandarban */}
+        <div className="collapse collapse-plus bg-white shadow-lg rounded-2xl border border-purple-200">
+          <input type="radio" name="faq-accordion" />
+          <div className="collapse-title text-lg lg:text-xl font-semibold text-purple-700">
+            ⛰ Why is Bandarban a must-visit?
+          </div>
+          <div className="collapse-content text-gray-700 leading-relaxed">
+            <p>
+              Bandarban is a hill district with breathtaking mountain views,
+              tribal culture, and spots like Nilgiri & Boga Lake, perfect for
+              adventure seekers.
+            </p>
+          </div>
         </div>
       </div>
     </div>
