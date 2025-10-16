@@ -1,185 +1,143 @@
-import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { useEffect, useState } from "react";
-import "react-tooltip/dist/react-tooltip.css";
 
 const Navbar = () => {
-  const { logout, user } = useAuth();
-  const navlinks = (
-    <>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/allTouristsSpot">All Tourists Spot</NavLink>
-      </li>
-      <li>
-        <NavLink to="/addTouristsSpot">Add Tourists Spot</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myList">My List</NavLink>
-      </li>
-    </>
-  );
+  const { user, logout } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [theme, setTheme] = useState("light");
-  // update state on toggle
-  const handleToggle = (e) => {
-    if (e.target.checked) {
-      setTheme("synthwave");
-    } else {
-      setTheme("light");
-    }
-  };
-
-  // set theme state in localStorage on mount & also update localStorage on state change
+  // Optional: sticky + close mobile menu on resize
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setIsOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    // add custom data-theme attribute
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
+  const navItems = [
+    { name: "Home", to: "/" },
+    { name: "All Tourists Spot", to: "/allTouristsSpot" },
+    { name: "Add Tourists Spot", to: "/addTouristsSpot" },
+    { name: "My List", to: "/myList" },
+    { name: "About", to: "/about" },
+  ];
+
+  const navLinks = navItems.map((item) => (
+    <li key={item.name}>
+      <NavLink
+        to={item.to}
+        className={({ isActive }) =>
+          `relative px-2 py-1 transition-all duration-300 ${
+            isActive
+              ? "text-blue-500 font-bold before:w-full"
+              : "hover:text-blue-500 before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-green-400 before:to-blue-500 before:transition-all before:duration-300 hover:before:w-full"
+          } before:absolute before:-bottom-1 before:left-0 before:h-0.5 before:bg-gradient-to-r before:from-green-400 before:to-blue-500 before:transition-all before:duration-300`
+        }
+      >
+        {item.name}
+      </NavLink>
+    </li>
+  ));
 
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-lg px-4 sm:px-8 fixed z-10">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+    <nav className="bg-base-100 sticky top-0 z-50 shadow-md">
+      <div className="max-w-auto mx-auto px-4 sm:px-6 lg:px-12 flex justify-between items-center h-16">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            className="w-12 h-12 rounded-full border-2 border-green-500"
+            src="./public/main_logo.png"
+            alt="Logo"
+          />
+          <span className="font-bold text-xl text-gray-800">TourAvels</span>
+        </Link>
+
+        {/* Desktop menu */}
+        <ul className="hidden lg:flex gap-6 text-lg">{navLinks}</ul>
+
+        {/* Auth buttons / mobile toggle */}
+        <div className="flex items-center gap-4">
+          {user ? (
+            <div className="flex items-center gap-3">
+              <span className="hidden sm:inline font-medium">{user.displayName}</span>
+              <button
+                onClick={logout}
+                className="btn btn-sm btn-error text-white hover:bg-red-600"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="hidden lg:flex gap-2">
+              <NavLink to="/login" className="btn btn-sm btn-success text-white hover:bg-green-600">
+                Login
+              </NavLink>
+              <NavLink to="/register" className="btn btn-sm btn-info text-white hover:bg-cyan-600">
+                Register
+              </NavLink>
+            </div>
+          )}
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden btn btn-ghost p-2"
+          >
+            {isOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              {navlinks}
-            </ul>
-          </div>
-          <Link to="/">
-            <img
-              className="w-14 h-14"
-              src="https://i.ibb.co/0cn7PrF/jm.png"
-              alt=""
-            />
-          </Link>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-xl">{navlinks}</ul>
-        </div>
-        <div className="navbar-end gap-3">
-          <label className="cursor-pointer grid place-items-center">
-            <input
-              onChange={handleToggle}
-              type="checkbox"
-              className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
-            />
-            <svg
-              className="col-start-1 row-start-1 stroke-base-100 fill-base-100"
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="5" />
-              <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-            </svg>
-            <svg
-              className="col-start-2 row-start-1 stroke-base-100 fill-base-100"
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </label>
-          {user ? (
-            <div className="dropdown dropdown-end">
-              <label
-                tabIndex={0}
-                className="btn btn-ghost btn-circle avatar relative"
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <div className="w-12 rounded-full">
-                  <img
-                    src={
-                      user?.photoURL ||
-                      "https://i.ibb.co/WsZ4wFT/Rectangle-7.png"
-                    }
-                    alt=""
-                  />
-                </div>
-                {/* <div>
-          <a data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName || "Not Found"}></a>
-        </div> */}
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <button className="btn btn-sm btn-ghost">
-                    {user?.displayName || "Not Found"}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={logout}
-                    className="btn btn-sm btn-ghost hover:text-red-500"
-                  >
-                    Logout
-                  </button>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <div className="flex gap-2">
-              <div>
-                <NavLink
-                  to="/login"
-                  className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
-                >
-                  <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                  <span className="relative">Login</span>
-                </NavLink>
-              </div>
-              <div>
-                <NavLink
-                  to="/register"
-                  className="relative rounded px-5 py-2.5 overflow-hidden group bg-cyan-500 relative hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-cyan-400 transition-all ease-out duration-300"
-                >
-                  <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                  <span className="relative">Register</span>
-                </NavLink>
-              </div>
-            </div>
-          )}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="lg:hidden px-4 pt-2 pb-4 border-t border-gray-200">
+          <ul className="flex flex-col gap-3">{navLinks}</ul>
+          <div className="flex flex-col gap-2 mt-4">
+            {user ? (
+              <>
+                <span className="font-medium">{user.displayName}</span>
+                <button
+                  onClick={logout}
+                  className="btn btn-sm btn-error text-white hover:bg-red-600"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <NavLink to="/login" className="btn btn-sm btn-success text-white w-full hover:bg-green-600">
+                  Login
+                </NavLink>
+                <NavLink to="/register" className="btn btn-sm btn-info text-white w-full hover:bg-cyan-600">
+                  Register
+                </NavLink>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 

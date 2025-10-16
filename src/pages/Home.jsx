@@ -3,7 +3,6 @@ import FirebaseProvider from "../FirebaseProvider/FirebaseProvider";
 import Slider from "../components/Slider";
 import SpotCard from "../components/SpotCard";
 import { useLoaderData } from "react-router-dom";
-import About from "../components/About";
 import Accordion from "../components/Accordion";
 
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
       <Slider></Slider>
 
       <div className="text-center m-10">
-        <h2 className="animate__animated animate__zoomIn my-14 text-purple-600 font-bold lg:text-5xl">
+        <h2 className="animate__animated animate__fadeInDown text-center mb-12 text-purple-800 font-extrabold text-3xl lg:text-5xl drop-shadow-md">
           Tourists Spots
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
@@ -33,12 +32,7 @@ const Home = () => {
       </div>
 
       <div className="lg:m-8">
-        <h2 className="animate__animated animate__slideInLeft text-center my-14 text-purple-600 font-bold lg:text-5xl">Fascinating Questions and Answers</h2>
         <Accordion></Accordion>
-      </div>
-
-      <div className="m-10">
-        <About></About>
       </div>
 
       <FirebaseProvider></FirebaseProvider>

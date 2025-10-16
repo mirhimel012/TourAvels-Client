@@ -11,6 +11,7 @@ import MyList from "../pages/MyList";
 import Details from "../components/Details";
 import UpdateSpot from "../components/UpdateSpot";
 import NotFoundPage from "../components/NotFoundPage";
+import About from "../pages/About";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: 'mylist/updatespot/:id',
                 element: <UpdateSpot></UpdateSpot>,
                 loader: ({params}) => fetch(`https://tour-avels-server.vercel.app/touristsSpot/${params.id}`)
+            },
+            {
+                path: '/about',
+                element: <About></About>,
             },
             {
                 path: '/register',

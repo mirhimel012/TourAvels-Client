@@ -5,7 +5,7 @@ const Accordion = () => {
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
       
       {/* Heading */}
-      <h2 className="animate__animated animate__fadeInDown text-center mb-12 text-purple-800 font-extrabold text-4xl lg:text-6xl drop-shadow-md">
+      <h2 className="animate__animated animate__fadeInDown text-center mb-12 text-purple-800 font-extrabold text-3xl lg:text-5xl drop-shadow-md">
         Frequently Asked Questions
       </h2>
 
