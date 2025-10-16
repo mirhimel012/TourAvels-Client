@@ -33,7 +33,7 @@ const Addspot = () => {
     console.log(newSpot);
 
     // send data to the server
-    fetch("https://journey-master-server.vercel.app/touristsSpot", {
+    fetch("https://tour-avels-server.vercel.app/touristsSpot", {
       method: "POST",
       headers: {
         "content-type": "application/json",
