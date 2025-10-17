@@ -9,7 +9,9 @@ const Home = () => {
   const loadedSpot = useLoaderData();
   const [spots, setSpots] = useState(loadedSpot);
   // Slice the spots array to show only 6 items
-  const spotsToShow = spots.slice(0, 6);
+  // const spotsToShow = spots.slice(0, 6);
+  const spotsToShow = Array.isArray(spots) ? spots.slice(0, 6) : [];
+
 
   return (
     <div className="mx-6">

@@ -11,7 +11,7 @@ import MyList from "../pages/MyList";
 import Details from "../components/Details";
 import UpdateSpot from "../components/UpdateSpot";
 import NotFoundPage from "../components/NotFoundPage";
-import About from "../pages/About";
+import About   from "../pages/About";
 
 const router = createBrowserRouter([
     {
