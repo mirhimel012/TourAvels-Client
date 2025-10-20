@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <h1>Journey Master</h1>
+      <h1>TourAvels</h1>
     </>
   )
 }

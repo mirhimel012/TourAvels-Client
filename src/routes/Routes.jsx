@@ -12,6 +12,7 @@ import Details from "../components/Details";
 import UpdateSpot from "../components/UpdateSpot";
 import NotFoundPage from "../components/NotFoundPage";
 import About   from "../pages/About";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>,
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>,
             },
             {
                 path: '/register',

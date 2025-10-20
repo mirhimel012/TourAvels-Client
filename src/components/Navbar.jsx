@@ -21,6 +21,7 @@ const Navbar = () => {
     { name: "Add Tourists Spot", to: "/addTouristsSpot" },
     { name: "My List", to: "/myList" },
     { name: "About", to: "/about" },
+    { name: "Contact", to: "/contact"},
   ];
 
   const navLinks = navItems.map((item) => (
