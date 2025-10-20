@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
+import { FaMapMarkerAlt, FaDollarSign, FaCalendarAlt, FaUsers, FaClock } from "react-icons/fa";
 
 const Details = () => {
   const spot = useLoaderData();
   const {
-    _id,
     name,
     country,
     cost,
@@ -16,48 +16,55 @@ const Details = () => {
     location,
     photo,
   } = spot;
+
   return (
-    <div className="card glass m-4 md:m-8">
-      <figure>
-        <img src={photo} alt="car!" />
-      </figure>
-      <div className="card-body">
-        <h2 className="text-2xl font-semibold text-green-500">
-          Spot Name: {name}
-        </h2>
-        <h2 className="text-xl font-semibold">Country: {country}</h2>
-        <div className="">
-          <h2 className="text-base">
-            <span className="font-medium">Average Cost:</span> {cost}
-          </h2>
-          <h2 className="text-base">
-            <span className="font-medium">Total Visitors Per Year:</span>{" "}
-            {totaVisitorsPerYear}
-          </h2>
-        </div>
-        <div className="">
-          <h2 className="text-base">
-            <span className="font-medium">Travel Time:</span> {travel_time}
-          </h2>
-          <h2 className="text-base">
-            <span className="font-medium">Seasonality:</span> {seasonality}
-          </h2>
-        </div>
-        <p>
-          <span className="font-medium">Spot Location:</span> {location}
+    <div className="max-w-5xl mx-auto p-6 md:p-12 bg-white rounded-3xl shadow-xl">
+      {/* Big Hero Image */}
+      <div className="overflow-hidden rounded-3xl mb-8 shadow-lg">
+        <img
+          src={photo}
+          alt={name}
+          className="w-full h-96 md:h-[500px] object-cover transform hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      {/* Main Details */}
+      <div className="space-y-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-purple-600">{name}</h1>
+        <p className="text-xl text-gray-700 flex items-center gap-3">
+          <FaMapMarkerAlt className="text-red-500" /> {country}
         </p>
-        <p>
-          <span className="font-medium">Short Discription about Spot:</span>{" "}
-          {message}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-600 text-lg">
+          <p className="flex items-center gap-2">
+            <FaDollarSign className="text-green-500" /> Cost: {cost}
+          </p>
+          <p className="flex items-center gap-2">
+            <FaCalendarAlt className="text-blue-500" /> Seasonality: {seasonality}
+          </p>
+          <p className="flex items-center gap-2">
+            <FaUsers className="text-orange-500" /> Visitors/Year: {totaVisitorsPerYear}
+          </p>
+          <p className="flex items-center gap-2">
+            <FaClock className="text-purple-500" /> Travel Time: {travel_time}
+          </p>
+        </div>
+
+        <p className="text-gray-700 text-lg">
+          <span className="font-medium">Location:</span> {location}
         </p>
-        <div className="">
-          <h2 className="text-base">
-            <span className="font-medium">User Name: </span> {username}
-          </h2>
-          <h2 className="text-base">
-            <span className="font-medium">User Email: </span>
-            {useremail}
-          </h2>
+
+        <p className="text-gray-700 text-lg">
+          <span className="font-medium">Description:</span> {message}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 text-lg">
+          <p>
+            <span className="font-medium">User Name:</span> {username}
+          </p>
+          <p>
+            <span className="font-medium">User Email:</span> {useremail}
+          </p>
         </div>
       </div>
     </div>

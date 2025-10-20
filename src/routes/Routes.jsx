@@ -25,7 +25,7 @@ const router = createBrowserRouter([
                 loader: () => fetch('https://tour-avels-server.vercel.app/touristsSpot')
             },
             {
-                path: '/allTouristsSpot',
+                path: '/explore',
                 element: <AllTouristsSpot></AllTouristsSpot>,
                 loader: () => fetch('https://tour-avels-server.vercel.app/touristsSpot')
             },
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://tour-avels-server.vercel.app/touristsSpot/${params.id}`)
             },
             {
-                path: '/addTouristsSpot',
+                path: '/addSpot',
                 element: <PrivateAddTouristsSpot><AddTouristsSpot></AddTouristsSpot></PrivateAddTouristsSpot> 
             },
             {
