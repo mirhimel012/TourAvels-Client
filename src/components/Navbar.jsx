@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Optional: sticky + close mobile menu on resize
+  // Close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) setIsOpen(false);
@@ -17,11 +17,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", to: "/" },
-    { name: "Explore", to: "/explore"},
-    { name: "Add Spot", to: "/addSpot"},
+    { name: "Explore", to: "/explore" },
+    { name: "Add Spot", to: "/addSpot" },
     { name: "My List", to: "/myList" },
     { name: "About", to: "/about" },
-    { name: "Contact", to: "/contact"},
+    { name: "Contact", to: "/contact" },
   ];
 
   const navLinks = navItems.map((item) => (
@@ -42,7 +42,7 @@ const Navbar = () => {
   ));
 
   return (
-    <nav className="bg-base-100 sticky top-0 z-50 shadow-md">
+    <nav className="bg-base-100/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-md">
       <div className="max-w-auto mx-auto px-4 sm:px-6 lg:px-12 flex justify-between items-center h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
@@ -54,7 +54,7 @@ const Navbar = () => {
           <span className="font-bold text-xl text-gray-800">TourAvels</span>
         </Link>
 
-        {/* Desktop menu */}
+        {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-6 text-lg">{navLinks}</ul>
 
         {/* Auth buttons / mobile toggle */}
@@ -71,10 +71,16 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="hidden lg:flex gap-2">
-              <NavLink to="/login" className="btn btn-sm btn-success text-white hover:bg-green-600">
+              <NavLink
+                to="/login"
+                className="btn btn-sm btn-success text-white hover:bg-green-600"
+              >
                 Login
               </NavLink>
-              <NavLink to="/register" className="btn btn-sm btn-info text-white hover:bg-cyan-600">
+              <NavLink
+                to="/register"
+                className="btn btn-sm btn-info text-white hover:bg-cyan-600"
+              >
                 Register
               </NavLink>
             </div>
@@ -110,7 +116,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden px-4 pt-2 pb-4 border-t border-gray-200">
           <ul className="flex flex-col gap-3">{navLinks}</ul>
@@ -127,10 +133,16 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <NavLink to="/login" className="btn btn-sm btn-success text-white w-full hover:bg-green-600">
+                <NavLink
+                  to="/login"
+                  className="btn btn-sm btn-success text-white w-full hover:bg-green-600"
+                >
                   Login
                 </NavLink>
-                <NavLink to="/register" className="btn btn-sm btn-info text-white w-full hover:bg-cyan-600">
+                <NavLink
+                  to="/register"
+                  className="btn btn-sm btn-info text-white w-full hover:bg-cyan-600"
+                >
                   Register
                 </NavLink>
               </>

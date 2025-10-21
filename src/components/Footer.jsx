@@ -1,14 +1,29 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault(); // Prevent navigation if already on home
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-gray-800 text-gray-100 py-8">
       <div className="container mx-auto flex flex-col items-center space-y-4">
-        
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <img src="/favLogo3.png" alt="Logo" className="w-14 h-12" />
-          <span className="text-2xl font-bold">TourAvels</span>
+          <Link
+            to="/"
+            onClick={handleLogoClick}
+            className="flex items-center space-x-3 cursor-pointer"
+          >
+            <img src="/favLogo3.png" alt="Logo" className="w-14 h-12" />
+            <span className="text-2xl font-bold">TourAvels</span>
+          </Link>
         </div>
 
         {/* Social Media */}
