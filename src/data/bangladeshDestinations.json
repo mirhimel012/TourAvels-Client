@@ -1,0 +1,73 @@
+{
+  "Dhaka": {
+    "spots": ["Ahsan Manzil", "Lalbagh Fort", "Jatiyo Sangsad Bhaban"],
+    "hotels": [
+      { "name": "Pan Pacific Sonargaon", "rating": 4.4, "price": 14640, "currency": "BDT", "source": "Pan Pacific official / listings" },
+      { "name": "Radisson Blu Dhaka Water Garden", "rating": 4.3, "price": 15860, "currency": "BDT", "source": "TripAdvisor/Expedia listings" },
+      { "name": "InterContinental Dhaka", "rating": 4.2, "price": 17080, "currency": "BDT", "source": "Expedia / hotel sites" }
+    ]
+  },
+
+  "Chattogram": {
+    "spots": ["Foy's Lake", "Patenga Beach", "Ethnological Museum"],
+    "hotels": [
+      { "name": "Radisson Blu Chattogram Bay View", "rating": 4.5, "price": 13420, "currency": "BDT", "source": "Radisson / Expedia" },
+      { "name": "The Peninsula Chittagong", "rating": 4.2, "price": 8540, "currency": "BDT", "source": "TripAdvisor" },
+      { "name": "Foy's Lake Resort", "rating": 4.0, "price": 7320, "currency": "BDT", "source": "Booking / Expedia" }
+    ]
+  },
+
+  "Cox's Bazar": {
+    "spots": ["Cox's Bazar Longest Sea Beach", "Himchhari", "Inani Beach"],
+    "hotels": [
+      { "name": "Sea Pearl Beach Resort & Spa", "rating": 4.4, "price": 14640, "currency": "BDT", "source": "Sea Pearl / TripAdvisor" },
+      { "name": "Sayeman Beach Resort", "rating": 4.2, "price": 12200, "currency": "BDT", "source": "Sayeman official / listings" },
+      { "name": "Hotel Royal Tulip Sea Pearl", "rating": 4.1, "price": 13420, "currency": "BDT", "source": "hotel listings" }
+    ]
+  },
+
+  "Sylhet (Sreemangal area)": {
+    "spots": ["Ratargul Swamp Forest", "Jaflong", "Tea Gardens"],
+    "hotels": [
+      { "name": "Grand Sultan Tea Resort & Golf (Sreemangal)", "rating": 4.3, "price": 10980, "currency": "BDT", "source": "Grand Sultan / Booking" },
+      { "name": "Tea Resort & Spa (Sylhet area)", "rating": 4.1, "price": 9760, "currency": "BDT", "source": "hotel listings/TripAdvisor" },
+      { "name": "Nazimgarh Resort (Sylhet)", "rating": 4.0, "price": 7320, "currency": "BDT", "source": "TripAdvisor/Booking" }
+    ]
+  },
+
+  "Bandarban": {
+    "spots": ["Nilgiri", "Nafakhum (nearby)", "Boga Lake area"],
+    "hotels": [
+      { "name": "Nilgiri Hill Resort", "rating": 4.6, "price": 8540, "currency": "BDT", "source": "Nilgiri official / TripAdvisor" },
+      { "name": "Hill View Hotel", "rating": 4.0, "price": 4880, "currency": "BDT", "source": "Booking / local listings" },
+      { "name": "Giri Raj Resort", "rating": 4.0, "price": 5490, "currency": "BDT", "source": "Booking / TripAdvisor" }
+    ]
+  },
+
+  "Rangamati": {
+    "spots": ["Kaptai Lake", "Hanging Bridge", "Shuvolong / Hill viewpoints"],
+    "hotels": [
+      { "name": "Hill Taj Resort", "rating": 4.1, "price": 6100, "currency": "BDT", "source": "TripAdvisor / travel listings" },
+      { "name": "Aronnok & Lakeshore Holiday Resort", "rating": 3.9, "price": 5490, "currency": "BDT", "source": "local listings" },
+      { "name": "Rangadip Resort", "rating": 4.0, "price": 4880, "currency": "BDT", "source": "Traveloka / Booking" }
+    ]
+  },
+
+  "Khulna (Sundarbans gateway)": {
+    "spots": ["Sundarbans (tour gateway)", "Khulna city sights"],
+    "hotels": [
+      { "name": "Radisson (Khulna - planned/landmark)", "rating": 4.0, "price": 8540, "currency": "BDT", "source": "News / Radisson announcement" },
+      { "name": "Hotel The Olive (Khulna)", "rating": 3.9, "price": 4880, "currency": "BDT", "source": "sharetrip / local listings" },
+      { "name": "Hotel Royal (Khulna)", "rating": 3.8, "price": 3660, "currency": "BDT", "source": "local travel sites" }
+    ]
+  },
+
+  "Rajshahi": {
+    "spots": ["Puthia Temple Complex", "Padma River viewpoints"],
+    "hotels": [
+      { "name": "Royal Raj Hotel & Condominium", "rating": 4.0, "price": 4270, "currency": "BDT", "source": "Trip / Booking listings" },
+      { "name": "Hotel X Rajshahi", "rating": 3.9, "price": 3660, "currency": "BDT", "source": "Trip.com / booking listings" },
+      { "name": "Grand River View Hotel - Rajshahi", "rating": 3.8, "price": 3416, "currency": "BDT", "source": "local listings" }
+    ]
+  }
+}

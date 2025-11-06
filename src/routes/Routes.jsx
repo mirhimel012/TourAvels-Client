@@ -13,6 +13,8 @@ import UpdateSpot from "../components/UpdateSpot";
 import NotFoundPage from "../components/NotFoundPage";
 import About   from "../pages/About";
 import Contact from "../pages/Contact";
+import TourMaker from "../pages/TourMaker";
+import PrivateTourMaker from "../pages/PriveteTourMaker";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('https://tour-avels-server.vercel.app/touristsSpot')
+            },
+            {
+                path: '/tours',
+                element: <PrivateTourMaker><TourMaker></TourMaker></PrivateTourMaker>,
             },
             {
                 path: '/explore',

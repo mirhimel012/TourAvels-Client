@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", to: "/" },
+    {name: "TourMaker", to: "/tours"},
     { name: "Explore", to: "/explore" },
     { name: "Add Spot", to: "/addSpot" },
     { name: "My List", to: "/myList" },
