@@ -26,7 +26,7 @@
     ]
   },
 
-  "Sylhet (Sreemangal area)": {
+  "Sylhet": {
     "spots": ["Ratargul Swamp Forest", "Jaflong", "Tea Gardens"],
     "hotels": [
       { "name": "Grand Sultan Tea Resort & Golf (Sreemangal)", "rating": 4.3, "price": 10980, "currency": "BDT", "source": "Grand Sultan / Booking" },
@@ -53,7 +53,7 @@
     ]
   },
 
-  "Khulna (Sundarbans gateway)": {
+  "Khulna": {
     "spots": ["Sundarbans (tour gateway)", "Khulna city sights"],
     "hotels": [
       { "name": "Radisson (Khulna - planned/landmark)", "rating": 4.0, "price": 8540, "currency": "BDT", "source": "News / Radisson announcement" },
@@ -68,6 +68,15 @@
       { "name": "Royal Raj Hotel & Condominium", "rating": 4.0, "price": 4270, "currency": "BDT", "source": "Trip / Booking listings" },
       { "name": "Hotel X Rajshahi", "rating": 3.9, "price": 3660, "currency": "BDT", "source": "Trip.com / booking listings" },
       { "name": "Grand River View Hotel - Rajshahi", "rating": 3.8, "price": 3416, "currency": "BDT", "source": "local listings" }
+    ]
+  },
+
+  "Saint Martin": {
+    "spots": ["Beach Walks", "Coral Reefs", "Coconut Groves"],
+    "hotels": [
+      { "name": "Saint Martin Resort", "rating": 4.3, "price": 12000, "currency": "BDT", "source": "Official / Booking" },
+      { "name": "Blue Ocean Resort", "rating": 4.1, "price": 9800, "currency": "BDT", "source": "TripAdvisor" },
+      { "name": "Coral Bay Hotel", "rating": 4.0, "price": 8600, "currency": "BDT", "source": "Local listings" }
     ]
   }
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 const TourForm = ({ onAddTour, setSelectedDestination }) => {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     title: "",
     destination: "",
@@ -9,6 +11,7 @@ const TourForm = ({ onAddTour, setSelectedDestination }) => {
     budget: "",
     travelers: "",
     notes: "",
+    userEmail: user?.email,
   });
 
   const handleChange = (e) => {

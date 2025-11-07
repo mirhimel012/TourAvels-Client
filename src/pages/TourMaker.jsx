@@ -5,6 +5,7 @@ import BudgetCalculator from "../components/BudgetCalculator";
 import HotelSuggestions from "../components/HotelSuggestions";
 import { AuthContext } from '../FirebaseProvider/FirebaseProvider';
 import destinationsData from '../data/bangladeshDestinations.json';
+import TourSpinner from "../components/TourSpinner";
 
 const TourMaker = () => {
   const [tours, setTours] = useState([]);
@@ -13,30 +14,35 @@ const TourMaker = () => {
 
   // Fetch tours for the user
   useEffect(() => {
-    if (user) {
-      fetch(`https://tour-avels-server.vercel.app/tourPlans?uid=${user.uid}`)
+    if (user?.email) {
+      fetch(`https://tour-avels-server.vercel.app/tourPlans?email=${user.email}`)
         .then(res => res.json())
         .then(data => setTours(data))
         .catch(err => console.error(err));
     }
   }, [user]);
 
+
   const handleAddTour = async (newTour) => {
     if (!user) return alert("Please login first!");
-    const tourWithUid = { ...newTour, uid: user.uid };
+    
+    // Include both UID (optional) and userEmail (required for filter)
+    const tourWithUser = { ...newTour, uid: user.uid, userEmail: user.email };
 
     try {
       const res = await fetch("https://tour-avels-server.vercel.app/tourPlans", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(tourWithUid),
+        body: JSON.stringify(tourWithUser),
       });
+
       const savedTour = await res.json();
-      setTours([...tours, savedTour]);
+      setTours([...tours, savedTour]); // update frontend state
     } catch (err) {
       console.error("Error saving tour:", err);
     }
   };
+
 
   const handleDeleteTour = async (id) => {
     try {
@@ -49,6 +55,10 @@ const TourMaker = () => {
 
   return (
     <div className="min-h-screen bg-base-200 p-6">
+      <div className="max-w-3xl mx-auto mb-10">
+        <TourSpinner onSelectDestination={setSelectedDestination} />
+      </div>
+
       <h1 className="text-4xl font-bold text-center mb-8 text-primary">
         🌍 Plan Your Next Adventure — TourMaker
       </h1>
