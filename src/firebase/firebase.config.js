@@ -5,13 +5,15 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCO936D7eccYgZNhylumZircShUU5gtNK8",
-  authDomain: "journey-master-28066.firebaseapp.com",
-  projectId: "journey-master-28066",
-  storageBucket: "journey-master-28066.appspot.com",
-  messagingSenderId: "409210569956",
-  appId: "1:409210569956:web:4b8914b8da30f0bc7bd8f1"
+  apiKey: "AIzaSyDvLXsEa3rqoKiKZQIW5P2F60riATFbRVo",
+  authDomain: "touravelsfire.firebaseapp.com",
+  projectId: "touravelsfire",
+  storageBucket: "touravelsfire.firebasestorage.app",
+  messagingSenderId: "384612616251",
+  appId: "1:384612616251:web:608a3ea31a6637a1d0f41e",
+  measurementId: "G-EGVDRMM585"
 };
 
 // Initialize Firebase
